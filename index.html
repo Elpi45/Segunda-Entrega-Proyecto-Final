@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Interactuamos con el DOM</h1>
+    <h3>Ingrese los datos de los productos a crear</h3>
+
+
+        <form action="" id="formulario" > <!-- creamos un formulario que me haga las preguntas para ingresar esos datos -->
+
+
+            <label for="">Nombre de la divisa</label>
+            <input type="text" name="producto" id="idivisa">
+                     <!-- i es del index original  -->
+
+
+            <label for="">Precio de la divisa</label>
+            <input type="number" name="precio" id="iprecio">
+
+
+            
+            <!-- <input type="submit" value="enviar datos"> -->
+            <button type="submit" id="btnSubmit">Enviar divisas a la lista</button> <!-- los datos que creamos necesitamos enviarlos, por eso creamos este boton -->
+
+            <button type="button" id="btnMostrar"> mostrar las divisas</button>
+        </form>
+ 
+        <div id="mostrarDiviSolas"> </div> <!-- necesitamos un div vacio para que nos muestre los prodctos, asi no usamos siempre la consola -->
+        <div id="mostrarTodasDivi"> </div> 
+    
+
+
+    <script src="app.js"></script>
+</body>
+</html>
