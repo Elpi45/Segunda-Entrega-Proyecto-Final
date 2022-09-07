@@ -1,4 +1,4 @@
-//crear el constructor que nos sirve como referencia para nuestro objeto prod
+//crear el constructor que nos sirve como referencia para nuestro objeto 
 // Si vamos a ingresar muchos productos creamos un constructor
 
 class Moneda {
@@ -79,17 +79,23 @@ function validarDatos() {
     console.log(idivisa)
     console.log(iprecio)
 
+
     
-    if(idivisa == '' || iprecio == ''){
-        alert("Error debe completar todos los campos para continuar")
-        inputProd.focus()
-        bandera = false;
-    } else {
-        bandera = true;
-    }
+
+    // if(idivisa == '' || iprecio == ''){
+    //     alert("Error debe completar todos los campos para continuar")
+    //     inputDivi.focus()
+    //     bandera = false;
+    // } else {
+    //     bandera = true;
+    // }
+
+    // APLICACION DE OPERADOR TERNARIO (igual que el if)
+    // Aplicacion de libreria "swetalert" con swal
+
+    idivisa == '' || iprecio == '' ? swal({text: "Error debe completar todos los campos para continuar"}) : inputDivi.focus() ? bandera = false : bandera = true
+    
 }
-
-
 
 
 
@@ -133,6 +139,13 @@ function agregarDivi(e){ // ESA "e" del prevent the fault = previene que los inp
 
 }
 
+//enviamos los datos 
+
+//velocidad >= 100 ? alert("Vas muy rapido") : (velocidad >= 80 ? alert("Vas bien") : alert("Buena velocidad"))
+
+
+
+
 
 //funcion para mostrar el DOM de la ultima divisa ingresada
 
@@ -172,3 +185,5 @@ for (const divisa of divisas) {
 }
 // o almacenar array completo
 guardarLocal("listaDivisas", JSON.stringify(divisas));
+
+
