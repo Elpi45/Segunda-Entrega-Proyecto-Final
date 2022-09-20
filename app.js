@@ -124,13 +124,13 @@ function agregarDivi(e){ // ESA "e" del prevent the fault = previene que los inp
             //traer el innerHTML 
 
             mostrarDiviSolas.innerHTML = ""
-
+            localStorage.setItem(idivisa, iprecio);
             //agregar la funcion que los muestra en el DOM
 
             mostrarUnaDivi() //Callback = llamamos a la funcion para que nos muestre los productos
             inputDivi.focus()
         } else {
-            alert("No se agregara el usuario")
+            alert("No se agregara la divisa")
         }
 
         } else {
@@ -186,4 +186,19 @@ for (const divisa of divisas) {
 // o almacenar array completo
 guardarLocal("listaDivisas", JSON.stringify(divisas));
 
+
+// Implementacion de APi
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '2ec551c918msheade7780f4f7cbfp1ccc48jsn283e8909350f',
+		'X-RapidAPI-Host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
+	}
+};
+
+fetch('https://currency-conversion-and-exchange-rates.p.rapidapi.com/convert?from=USD&to=EUR&amount=100', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
